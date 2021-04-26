@@ -1,0 +1,66 @@
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <span>Từ Ngày : </span>
+            <dx-date-box [(value)]="service.startDate" [width]="200" valueChangeEvent="keyup" (onValueChanged)="onDateChange($event)">
+            </dx-date-box>
+        </div>
+        <div class="col-sm-6">
+            <span>Đến Ngày : </span>
+            <dx-date-box [(value)]="service.endDate" [width]="200" valueChangeEvent="keyup" (onValueChanged)="onDateChange($event)">
+            </dx-date-box>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <dx-chart id="chart" [dataSource]="dataSource"
+            (onPointClick)="onClickTest($event)"
+            >
+                <dxo-common-series-settings  argumentField="productName" type="bar">
+                </dxo-common-series-settings>
+                <input valueField="productID" type="hidden"/>
+                <dxi-series valueField=receivedQty name="Received Qty"></dxi-series>
+                <dxi-series valueField="reorderPoint" name="Reorder Point"></dxi-series>
+                <dxi-series valueField="safetyStockLevel" name="Safety Stock Level"></dxi-series>
+            </dx-chart>
+        </div>
+    </div>
+</div>
+
+<!--  
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <dx-chart id="chart"
+                [class]=" isFirstLevel?'pointer-on-bars':'' "
+
+                [dataSource]="dataSource"
+
+                (onPointClick)="onPointClick($event)"
+
+                title="Drill Down"
+
+                [customizePoint]="customizePoint">
+
+                <dxi-series type="bar"></dxi-series>
+
+                <dxo-legend [visible]="false"></dxo-legend>
+
+                <dxi-value-axis [showZero]="false"></dxi-value-axis>
+            </dx-chart>
+            <dx-button class="button-container"
+                    text="Back"
+                    icon="chevronleft"
+                    [visible]="!isFirstLevel"
+                    (onClick)="onButtonClick()">
+            </dx-button>
+        </div>
+    </div>
+</div> 
+ -->
+
+ 

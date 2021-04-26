@@ -1,0 +1,38 @@
+﻿@page
+@model FGC.BI.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 mt-5">
+        <div class="text-center mb-5">
+            <img src="~/images/fgc.png" style="width:120px"/>
+        </div>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-center">
+                    <h1>Đăng nhập</h1>
+                    <div asp-validation-summary="All" class="p-3 text-danger"></div>
+                </div>
+                <form method="post">
+                    @(Html.DevExtreme().Form<FGC.BI.Pages.Account.LoginInput>()
+                        .ColCount(1)
+                        .LabelLocation(FormLabelLocation.Top)
+                        .Items(f=> {
+                            f.AddSimpleFor(m => m.UserName).Label(l => l.Text("Tên đăng nhập")).Editor(e => e.TextBox().ElementAttr("class", "text-uppercase"));
+                            f.AddSimpleFor(m => m.Password).Label(l => l.Text("Mật khẩu")).Editor(e => e.TextBox().Mode(TextBoxMode.Password));
+                            f.AddSimpleFor(m => m.RememberMe).Label(l => l.Visible(false)).Editor(e => e.CheckBox().Text("Nhớ đăng nhập"));
+                            f.AddButton().ButtonOptions(b => b.Text("Đăng nhập").Type(ButtonType.Default).UseSubmitBehavior(true));
+                        })
+                        .OnContentReady(@<text>
+                            function(e){
+                                e.component.getEditor('UserName').focus();
+                            }
+                        </text>)
+                    )
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

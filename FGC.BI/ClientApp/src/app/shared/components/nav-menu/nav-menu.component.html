@@ -1,0 +1,9 @@
+<dx-menu [items]="menuItems" (onItemClick)="onMenuItemClick($event)" [adaptivityEnabled]="true"
+    [showFirstSubmenuMode]="'onHover'" [hideSubmenuOnMouseLeave]="true" [activeStateEnabled]="true">
+
+    <div *dxTemplate="let item of 'linkItem'" class=" dx-menu-item-has-text">
+        <a [routerLink]="[item.path]">
+            <span class="dx-menu-item-text" [innerHTML]="item.text"></span>
+        </a>
+    </div>
+</dx-menu>

@@ -1,0 +1,52 @@
+<!-- <dx-toolbar>
+  <dxi-item location="before">
+    <div *dxTemplate>
+      <app-nav-menu [menuItems]="menuItems"></app-nav-menu>
+    </div>
+  </dxi-item>
+  <dxi-item location="center">
+    <div *dxTemplate>
+      <img src="/assets/images/fgc.png"/>
+    </div>
+  </dxi-item>
+  <dxi-item location="after">
+    <div *dxTemplate>{{ userProfile.displayName }}</div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" [buttonOptions]="{}"></dxi-item>
+</dx-toolbar>
+ -->
+
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div
+      class="col h-100 d-flex flex-column"
+      style="flex: 0 0 250px; background-color: #ebebeb"
+    >
+      <div class="text-center my-3">
+        <img class="mr-3" src="/assets/images/fgc.png" style="width: 70px" />
+      </div>
+      <div class="flex-fill">
+        <dx-list [items]="dashboards" height="100%"></dx-list>
+      </div>
+      <div class="py-2 border-top">
+        <app-logout-button></app-logout-button>
+      </div>
+    </div>
+    <div
+      class="col h-100 border-left shadow-sm"
+      style="background-color: #f5f5f5"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<dx-load-panel
+  [position]="{ of: 'body' }"
+  [(visible)]="loading"
+  [showIndicator]="true"
+  [showPane]="true"
+  [shading]="true"
+  [closeOnOutsideClick]="false"
+>
+</dx-load-panel>

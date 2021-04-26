@@ -1,0 +1,37 @@
+<dx-toolbar class="mt-2 mb-4 bg-transparent">
+  <dxi-item location="before">
+    <div *dxTemplate>
+      <dx-form [formData]="filter" colCount="2" labelLocation="left" (onFieldDataChanged)="onChange($event)">
+        <dxi-item dataField="fromDate" editorType="dxDateBox" [label]="{ text: 'Từ ngày' }" [editorOptions]="{
+            useMaskBehavior: true,
+            displayFormat: 'dd/MM/yyyy'
+          }"></dxi-item>
+        <dxi-item dataField="toDate" editorType="dxDateBox" [label]="{ text: 'Đến ngày' }" [editorOptions]="{
+            useMaskBehavior: true,
+            displayFormat: 'dd/MM/yyyy'
+          }"></dxi-item>
+      </dx-form>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" [options]="{ icon: 'refresh' }">
+  </dxi-item>
+</dx-toolbar>
+
+<div class="dashboard">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <app-chart [dataSource]="chartDataSource" [dataFilter]="filter"></app-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <app-chart [dataSource]="chartDataSource" [dataFilter]="filter"></app-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
