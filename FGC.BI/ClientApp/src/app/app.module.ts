@@ -21,7 +21,9 @@ import { LogoutButtonComponent } from './shared/components/logout-button.compone
 import { ChartComponent } from './shared/components/chart/chart.component';
 import { DetailComponent } from './detail/detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { ChartSalesComponent } from './shared/components/chart-sales/chart-sales.component';
+import { OrderQtyComponent } from './shared/components/order-qty/order-qty.component'; 
 
 function initApp(profileService: ProfileService): any {
   return () => profileService.getProfile();
@@ -35,6 +37,8 @@ function initApp(profileService: ProfileService): any {
     HomeComponent,
     ChartComponent,
     DetailComponent,
+    ChartSalesComponent,
+    OrderQtyComponent,
     
   ],
   imports: [

@@ -34,5 +34,6 @@ namespace FGC.BI.Data
         public string rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
         public ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
     }
 }

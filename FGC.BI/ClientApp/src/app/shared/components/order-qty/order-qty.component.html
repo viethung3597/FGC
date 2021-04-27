@@ -1,0 +1,18 @@
+
+<h1>Page OrderQty</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <dx-chart id="chart" [dataSource]="chartDataSource" (onPointClick)="onBack($event)">
+                <dxo-common-series-settings argumentField="month" type="bar">
+
+                </dxo-common-series-settings>
+
+                <dxi-series valueField="orderQty" name="Order Qty"></dxi-series>
+
+            </dx-chart>
+        </div>
+
+    </div>
+</div>

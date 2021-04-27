@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <dx-chart id="chart" [dataSource]="dataSource"
+            (onPointClick)="onClickTest($event)"
+            >
+                <dxo-common-series-settings  argumentField="productName" type="bar">
+                </dxo-common-series-settings>
+                <input valueField="productID" type="hidden"/>
+                <dxi-series valueField=lineTotal name="Line Total"></dxi-series>
+            </dx-chart>
+        </div>
+    </div>
+</div>

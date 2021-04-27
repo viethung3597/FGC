@@ -19,19 +19,19 @@
 
 <div class="dashboard">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <app-chart-sales [dataSource]="chartDataSource" [dataFilter]="filter"></app-chart-sales>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
           <app-chart [dataSource]="chartDataSource" [dataFilter]="filter"></app-chart>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <app-chart [dataSource]="chartDataSource" [dataFilter]="filter"></app-chart>
-        </div>
-      </div>
-    </div>
+    </div> -->
   </div>
 </div>
